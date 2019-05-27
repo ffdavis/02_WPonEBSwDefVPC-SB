@@ -1,5 +1,5 @@
 locals {
-  env = "DEVELOP" # It could be PROD, STAGING, DEV, etc
+  env = "PROD" # It could be PROD, STAGING, DEV, etc
 }
 
 provider "aws" {

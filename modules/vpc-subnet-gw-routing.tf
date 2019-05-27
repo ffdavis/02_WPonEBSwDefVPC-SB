@@ -6,7 +6,7 @@ Subnet address	Netmask	          Range of addresses	          Useable IPs	      
 172.28.0.0/28	  255.255.255.240	  172.28.0.0 - 172.28.0.15	    172.28.0.1 - 172.28.0.14	  14		
 172.28.0.16/28	255.255.255.240	  172.28.0.16 - 172.28.0.31	    172.28.0.17 - 172.28.0.30	  14	
 */
-
+/*
 resource "aws_vpc" "StoreOne-VPC" {
   cidr_block           = "173.28.0.0/27" # VPC
   enable_dns_support   = true
@@ -73,3 +73,5 @@ resource "aws_route_table_association" "StoreOne-RTA2" {
   subnet_id      = "${aws_subnet.StoreOne-SN2.id}"        # RTA 2 for SN 2
   route_table_id = "${aws_route_table.StoreOne-RTPub.id}"
 }
+*/
+

@@ -1,11 +1,10 @@
-# resource "aws_default_vpc" "default" {}
-# vpc_id = "${aws_default_vpc.default.id}"
+resource "aws_default_vpc" "default" {}
 
 resource "aws_security_group" "StoreOneSG-DB" {
   # SG - DB  --------------------------------------------------------
   name = "StoreOneSG-DB" # SG 3306 
 
-  vpc_id = "${aws_vpc.StoreOne-VPC.id}"
+  vpc_id = "${aws_default_vpc.default.id}"
 
   tags = {
     Name = "StoreOneSG-DB-EBS"
@@ -39,7 +38,7 @@ resource "aws_security_group" "StoreOneSG-ec2" {
   # SG - ec2  --------------------------------------------------------
   name = "StoreOneSG-ec2-EBS" # SG 22
 
-  vpc_id = "${aws_vpc.StoreOne-VPC.id}"
+  vpc_id = "${aws_default_vpc.default.id}"
 
   tags = {
     Name = "StoreOneSG-ec2"
@@ -73,7 +72,7 @@ resource "aws_security_group" "StoreOneSG-LB" {
   # SG - LB  --------------------------------------------------------
   name = "StoreOneSG-LB-EBS" # SG 80
 
-  vpc_id = "${aws_vpc.StoreOne-VPC.id}"
+  vpc_id = "${aws_default_vpc.default.id}"
 
   tags = {
     Name = "StoreOneSG-LB"
